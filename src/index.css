@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav.toplevel {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+nav {
+    border-bottom: 2px solid black;
+    padding: 1em;
+    text-align: left;
+}
+
+nav a {
+    font-weight: bold;
+    padding: 1em;
+    border: 1px solid black;
+}
+
+nav.toplevel a.active {
+    background-color: black;
+    color: white;
+}
+
+nav a.active {
+    background-color: darkblue;
+    color: white;
+}
