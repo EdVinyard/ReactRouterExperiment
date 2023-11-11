@@ -13,13 +13,9 @@ function App() {
                     <NavLink to="/profile">Profile</NavLink>
                 </nav>
             </header>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/widgets" component={Widgets} />
-            <Route path="/profile"
-                render={({ history, location, match }) =>
-                    <Profile rootPath={match.path} />
-                }
-                />
+            <Route exact path="/"><Home /></Route>
+            <Route exact path="/widgets"><Widgets /></Route>
+            <Route path="/profile"><Profile /></Route>
         </div>
     );
 }

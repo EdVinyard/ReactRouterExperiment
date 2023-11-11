@@ -1,26 +1,26 @@
-import { Route, NavLink } from 'react-router-dom/cjs/react-router-dom';
+import { Route, NavLink, useRouteMatch } from 'react-router-dom/cjs/react-router-dom';
 
 /**
- * A collection of "sub-pages" dedicated to viewing and
+ * A collection of "sub-pages"  to viewing and
  * editing a user profile, starting at a common path.
  * Think of this like https://github.com/settings/.
  */
-export function Profile({ rootPath }) {
-    console.log(rootPath);
-    const credentialsPath = `${rootPath}/credentials`;
-    const preferencesPath = `${rootPath}/preferences`;
+export function Profile() {
+    const { path } = useRouteMatch();
+    const credsPath = `${path}/credentials`;
+    const prefsPath = `${path}/preferences`;
     return (
         <div>
             <nav>
-                <NavLink to={credentialsPath}>Credentials</NavLink>
-                <NavLink to={preferencesPath}>Preferences</NavLink>
+                <NavLink to={credsPath}>Credentials</NavLink>
+                <NavLink to={prefsPath}>Preferences</NavLink>
             </nav>
             <h1>Profile</h1>
             <p>
-                Profile sub-pages begin at {rootPath}.
+                Profile sub-pages begin at {path}.
             </p>
-            <Route exact path={credentialsPath} component={Credentials} />
-            <Route exact path={preferencesPath} component={Preferences} />
+            <Route exact path={credsPath}><Credentials /></Route>
+            <Route exact path={prefsPath}><Preferences /></Route>
         </div>
     );
 }
