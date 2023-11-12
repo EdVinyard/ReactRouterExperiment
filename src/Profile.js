@@ -1,26 +1,28 @@
-import { useMatch, NavLink, Route } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 
 /**
- * A collection of "sub-pages"  to viewing and
+ * A collection of "sub-pages" for viewing and
  * editing a user profile, starting at a common path.
  * Think of this like https://github.com/settings/.
  */
 export function Profile() {
-    const { path } = useMatch();
-    const credsPath = `${path}/credentials`;
-    const prefsPath = `${path}/preferences`;
+    // In React Router v6, all the links and routes are *relative*
+    // to the current location, so we can eliminate some of the
+    // bookkeeping we had in here before.
     return (
         <div>
             <nav>
-                <NavLink to={credsPath}>Credentials</NavLink>
-                <NavLink to={prefsPath}>Preferences</NavLink>
+                <NavLink to="credentials">Credentials</NavLink>
+                <NavLink to="preferences">Preferences</NavLink>
             </nav>
             <h1>Profile</h1>
             <p>
-                Profile sub-pages begin at {path}.
+                Profile sub-pages begin at ?????.
             </p>
-            <Route exact path={credsPath}><Credentials /></Route>
-            <Route exact path={prefsPath}><Preferences /></Route>
+            <Routes>
+                <Route path="credentials" element={<Credentials />} />
+                <Route path="preferences" element={<Preferences />} />
+            </Routes>
         </div>
     );
 }
