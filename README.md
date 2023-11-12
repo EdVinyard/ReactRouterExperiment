@@ -26,7 +26,10 @@ the routes/paths "under" that root "mount point".
 
 ## Use
 
-This repo contains separate branches for v5 and v6.
+This repo contains separate branches for 
+[v5](https://github.com/EdVinyard/ReactRouterExperiment/tree/v5) and 
+[v6](https://github.com/EdVinyard/ReactRouterExperiment/tree/v6).  The main 
+branch is useless.
 
 On either branch, run
 
