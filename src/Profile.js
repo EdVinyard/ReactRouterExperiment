@@ -8,7 +8,8 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 export function Profile() {
     // In React Router v6, all the links and routes are *relative*
     // to the current location, so we can eliminate some of the
-    // bookkeeping we had in here before.
+    // bookkeeping we had in here before.  To emphasize this, I
+    // removed the hook entirely.
     return (
         <div>
             <nav>
@@ -17,7 +18,8 @@ export function Profile() {
             </nav>
             <h1>Profile</h1>
             <p>
-                Profile sub-pages begin at ?????.
+                Profile sub-pages begin at the path "mount point"
+                determined by the host application.
             </p>
             <Routes>
                 <Route path="credentials" element={<Credentials />} />
